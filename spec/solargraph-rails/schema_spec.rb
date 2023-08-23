@@ -17,6 +17,7 @@ RSpec.describe Solargraph::Rails::Schema do
           t.boolean "active"
           t.text "notes"
           t.inet "some_ip"
+          t.macaddr "some_macaddress"
           t.datetime "created_at", null: false
           t.json "old_school_json"
           t.jsonb "new_school_json"
@@ -62,6 +63,7 @@ RSpec.describe Solargraph::Rails::Schema do
     assert_public_instance_method(map, "Account#active", ["Boolean"])
     assert_public_instance_method(map, "Account#notes", ["String"])
     assert_public_instance_method(map, "Account#some_ip", ["IPAddr"])
+    assert_public_instance_method(map, "Account#some_macaddr", ["String"])
     assert_public_instance_method(map, "Account#uuid", ["String"])
     assert_public_instance_method(map, "Account#old_school_json", ["Hash"])
     assert_public_instance_method(map, "Account#new_school_json", ["Hash"])
